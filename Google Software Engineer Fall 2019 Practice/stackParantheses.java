@@ -4,28 +4,46 @@ import java.util.Collections;
 public class stackParantheses{
 	public static void main(String[] args)
 	{
-		Stack<Character> parantheses = new Stack<Character>();
-		String parantee = "()()";
-		char[] charParantee = parantee.toCharArray();
-		for (int i=0;i<charParantee.length;i++)
+		String[] tests  = {"(This)", "(T()()"};
+		stackParantheses.testCase(tests);
+	}
+	public static void testCase(String[] tests)
+	{
+		Stack<Character> parantheses;
+		Boolean areEqual;
+		for (String test: tests)
 		{
-			if (charParantee[i] == '(')
+			areEqual = true;
+			System.out.println("For the String: "+test);
+			parantheses = new Stack<Character>();
+			char[] charParantee = test.toCharArray();
+			for (int i=0;i<charParantee.length;i++)
 			{
-				parantheses.push('(');
-			}
-			if (charParantee[i] == ')')
-			{
-				if (parantheses.isEmpty())
+				if (charParantee[i] == '(')
 				{
-					System.out.println("Error improper parantheses");
-					break;
+					parantheses.push('(');
 				}
-				else {
-					parantheses.pop();	
+				else if (charParantee[i] == ')')
+				{
+					if (parantheses.isEmpty())
+					{
+						areEqual=false;
+						break;
+					}
+					else {
+						parantheses.pop();	
+					}
 				}
 			}
+			if (areEqual && parantheses.isEmpty())
+			{
+				System.out.println("Are Equal");
+			}
+			else {
+				System.out.println("Error improper parantheses");
+			}
+
 		}
 
 	}
-
 }
