@@ -1,5 +1,5 @@
 import java.util.Random;
-public class HW6 {
+public class ternarySearch {
 	    public static int terSearch(int arr[], int l, int r, int x)
 	    {
 	        // l holds the head of the list [0] and r holds the tail of the
@@ -47,15 +47,15 @@ public class HW6 {
 
 	        int x = generate.nextInt(1001)-1000; // returns an int from 0...100
 
-	        if (HW6.terSearch(arr, 0, arr.length - 1, x) == -1)
+	        if (ternarySearch.terSearch(arr, 0, arr.length - 1, x) == -1)
 	        {
-	            System.out.println(HW6.terSearch(arr, 0, arr.length - 1, x)
+	            System.out.println(ternarySearch.terSearch(arr, 0, arr.length - 1, x)
 	                 + "\n" + x + " is not on the list");
 	        }
 	        else
 	        {
 	            System.out.println(x + " is on index "
-	                 + HW6.terSearch(arr, 0, arr.length - 1, x));
+	                 + ternarySearch.terSearch(arr, 0, arr.length - 1, x));
 	        }
 	    }
 	
